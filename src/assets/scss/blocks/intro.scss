@@ -1,0 +1,21 @@
+.intro {
+   display: flex;
+   flex-direction: column;
+}
+
+.intro__header {
+   margin-bottom: 2rem;
+   text-align: center;
+}
+
+.intro__title {
+   margin-bottom: 1.5rem;
+
+   font-size: 5rem;
+   line-height: 1.2;
+   text-transform: uppercase;
+}
+
+.intro__text {
+   padding: 0 2rem;
+}

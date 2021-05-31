@@ -1,0 +1,24 @@
+.header {
+   width: 100%;
+   background: #1b0e27;
+   color: $white;
+
+   box-shadow: 0 2px 15px 2px rgba($black, .7);
+
+   position: fixed;
+   left: 0;
+   top: 0;
+}
+
+.header__inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header__brand {
+   font-family: 'Permanent Marker', cursive;
+   font-size: 2.4rem;
+   font-weight: 700;
+   text-transform: uppercase;
+}

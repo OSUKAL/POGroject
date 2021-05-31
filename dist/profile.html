@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap">
+    
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    
+    <title>Project | Profile</title>
+</head>
+<body>
+    <div class="page">
+
+        <!-- Header -->
+        <header class="header">
+           <div class="container">
+              <div class="header__inner">
+                 <div class="header__brand">Brand</div>
+        
+                 <nav class="nav">
+                    <ul class="nav__list">
+                       <li class="nav__item">
+                          <a class="nav__link" href="index.html" >Главная</a>
+                       </li>
+        
+                       <li class="nav__item">
+                          <a class="nav__link" href="#">Библиотека</a>
+                       </li>
+        
+                       <li class="nav__item">
+                          <div class="nav__link user-subnav" id="signed-in">[username]</div>
+        
+                          <ul class="subnav">
+                             <li>
+                                <a class="subnav__link" href="profile.html">Профиль</a>
+                             </li>
+                             <li>
+                                <a class="subnav__link" href="#">Выйти</a>
+                             </li>
+                          </ul>
+                       </li>
+        
+                       <li class="nav__item">
+                          <a class="nav__link" href="forms.html" id="sign-in">Войти</a>
+                       </li>
+                    </ul>
+        
+                 </nav>
+              </div>
+           </div>
+        </header>
+
+        <!-- Main -->
+        <main class="main">
+            <div class="container container--main">
+                
+                
+                <h1 class="page__title page__title--profile">Информация об аккаунте</h1>
+                
+                <form class="form" action="/" method="post">
+                   <div class="form__group">
+                      <input class="form__control" type="text" value="[nickname]" readonly>
+                      <span class="form__line"></span>
+                   </div>
+                
+                   <div class="form__group">
+                      <input class="form__control" type="email" value="[e-mail]" readonly>
+                      <span class="form__line"></span>
+                   </div>
+                
+                   <div class="form__group">
+                      <input class="form__control" type="password" placeholder="Новый пароль">
+                      <span class="form__line"></span>
+                   </div>
+                
+                   <div class="form__group">
+                      <input class="form__control" type="password" placeholder="Подтвердите пароль">
+                      <span class="form__line"></span>
+                   </div>
+                
+                   <div class="form__footer">
+                      <div class="form__group">
+                         <button class="btn" type="submit">Сохранить</button>
+                      </div>
+                   </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
