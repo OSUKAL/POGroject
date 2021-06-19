@@ -1,0 +1,11 @@
+.page {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   min-height: 100vh;
+   padding: 5.5rem 0 8rem;
+   background: $primary url("../images/background.jpg") center no-repeat fixed;
+   background-size: cover;
+
+   overflow: hidden;
+}

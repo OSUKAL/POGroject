@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head }}
+</head>
+<body>
+    <div class="page">
+
+        <div id="dynamic-component-demo" class="demo">
+            <button
+                v-for="tab in tabs"
+                :key="tab"
+                :class="['tab-button', { active: currentTab === tab }]"
+                @click="currentTab = tab"
+                >
+                <% tab %>
+            </button>
+
+            <!-- Inactive components will be cached! -->
+            <keep-alive>
+                <component :is="currentTabComponent">     </component>
+            </keep-alive>
+        </div>
+
+        <!-- Header -->
+        {{> header }}
+
+        <!-- Main -->
+        <div class="container">
+            <main class="main">
+                {{> body }}
+            </main>
+        </div>
+    </div>
+
+    {{> modal }}
+
+    <!-- JS -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

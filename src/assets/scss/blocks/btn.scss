@@ -1,6 +1,6 @@
 .btn {
    display: inline-block;
-   padding: .6em 1.7em;
+   padding: .6em 2.5em;
 
    color: rgba($white, .6);
    font-family: inherit;
@@ -9,7 +9,7 @@
    text-decoration: none;
 
    border: none;
-   border-radius: .5em;
+   border-radius: .6em;
    outline: none;
    background: #363636;
 
@@ -17,8 +17,29 @@
 
    transition: background-color .2s linear, color .2s linear;
 
+   &--lib {
+      font-size: 1.8rem;
+   }
+
+   &--add-game {
+      margin-left: auto;
+      margin-top: 1.5rem;
+      font-size: 2rem;
+   }
+
    &:hover {
       background-color: #5c2a7f;
       color: $white;
    }
+}
+
+.btn--link {
+   font-family: inherit;
+   font-size: inherit;
+   font-weight: inherit;
+   text-align: left;
+
+   background: none;
+   border: none;
+   cursor: pointer;
 }

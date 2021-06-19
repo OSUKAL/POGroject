@@ -1,10 +1,6 @@
 .container {
    width: 100%;
-   max-width: 100rem;
+   max-width: 120rem;
    margin: 0 auto;
    padding: 0 1rem;
-
-   &--main {
-      background: rgba(#1b0e27, .4);
-   }
 }

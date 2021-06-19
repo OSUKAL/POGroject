@@ -1,0 +1,43 @@
+.lib {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+   width: 100%;
+}
+
+.lib__item {
+   flex-grow: 1;
+   width: 55rem;
+   max-width: 65rem;
+   padding: .5rem .75rem 2.5rem;
+
+}
+
+.lib__preview {
+   padding-top: 56.25% ;
+   overflow: hidden;
+   position: relative;
+
+   img {
+      display: block;
+      width: 100%;
+      margin: 0;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+   }
+}
+
+.lib__title {
+   font-size: 3rem;
+   text-transform: uppercase;
+
+}
+
+.lib__description {
+   font-size: 1.6rem;
+   padding-bottom: .5rem;
+   text-align: justify;
+}
