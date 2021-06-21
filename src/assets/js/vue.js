@@ -10584,7 +10584,7 @@ var Vue = (function (exports) {
       quot: '"'
   };
   const defaultParserOptions = {
-      delimiters: [`{{`, `}}`],
+      delimiters: ["{{", "}}"],
       getNamespace: () => 0 /* HTML */,
       getTextMode: () => 0 /* DATA */,
       isVoidTag: NO,
