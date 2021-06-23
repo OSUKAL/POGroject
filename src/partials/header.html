@@ -18,7 +18,7 @@
 
                   <ul class="subnav">
                      <li>
-                        <button class="subnav__link btn--link" type="button">Профиль</a>
+                        <button class="subnav__link btn--link" @click="currentModal = 'Profile'">Профиль</a>
                      </li>
                      <li>
                         <a class="subnav__link" href="index.html">Выйти</a>
@@ -27,7 +27,7 @@
                </li>
 
                <li class="nav__item">
-                  <button class="nav__link btn--link" type="button">Войти</button>
+                  <button class="nav__link btn--link" @click="showModal">Войти</button>
                </li>
             </ul>
 
@@ -35,3 +35,19 @@
       </div>
    </div>
 </header>
+
+
+<!-- <div id="dynamic-component-demo" class="demo">
+   <button
+       v-for="tab in tabs"
+       :key="tab"
+       :class="['tab-button', { active: currentTab === tab }]"
+       @click="currentTab = tab"
+       >
+       ${ tab }$
+   </button>
+
+   <keep-alive>
+       <component :is="currentTabComponent">     </component>
+   </keep-alive>
+</div> -->

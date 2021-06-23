@@ -1,8 +1,5 @@
-.game {
-   padding-top: 56.25%;
-}
-
-.game__window {
-   background: #000;
-
+#canvas {
+   background: url("../images/bg.jpg") center no-repeat;
+   background-size: cover;
+   overflow: hidden;
 }

@@ -3,23 +3,8 @@
 <head>
     {{> head }}
 </head>
-<body class="no-scroll">
+<body id="dynamic-component-modal" :class="{ isModalVisible: no-scroll }" >
     <div class="page">
-
-        <div id="dynamic-component-demo" class="demo">
-            <button
-                v-for="tab in tabs"
-                :key="tab"
-                :class="['tab-button', { active: currentTab === tab }]"
-                @click="currentTab = tab"
-                >
-                ${ tab }$
-            </button>
-
-            <keep-alive>
-                <component :is="currentTabComponent">     </component>
-            </keep-alive>
-        </div>
 
         <!-- Header -->
         {{> header }}
@@ -32,10 +17,31 @@
         </div>
     </div>
 
+    <!-- <div v-if="isModalVisible" class="modal" @click.self="closeModal">
+        <component :is="currentModalComponent">     </component>
+    </div> -->
+
     {{> modal }}
 
     <!-- JS -->
     <script src="https://unpkg.com/vue@next"></script>
     <script src="assets/js/app.js"></script>
+
 </body>
 </html>
+
+<!-- <div id="dynamic-component-demo" class="demo">
+            <button
+                v-for="tab in tabs"
+                :key="tab"
+                :class="['tab-button', { active: currentTab === tab }]"
+                @click="currentTab = tab"
+                >
+                ${ tab }$
+            </button>
+
+            <keep-alive>
+                <component :is="currentTabComponent">     </component>
+            </keep-alive>
+        </div> -->
+

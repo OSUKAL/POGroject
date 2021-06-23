@@ -1,91 +1,100 @@
 import delimiters from "./delimiters"
 
-
-const app = Vue.createApp({
-  data() {
-    return {
-      currentTab: 'Home',
-      tabs: ['Home', 'Posts', 'Archive'],
-    }
-  },
-  computed: {
-    currentTabComponent() {
-      return 'tab-' + this.currentTab.toLowerCase()
-    }
-  },
-  ...delimiters
-})
-
-app.component('tab-home', {
-  template: `<div class="demo-tab">Home component</div>`
-})
-
-app.component('tab-posts', {
-  template: `<div class="dynamic-component-demo-posts-tab">
-    <ul class="dynamic-component-demo-posts-sidebar">
-      <li
-        v-for="post in posts"
-        :key="post.id"
-        :class="{
-          'dynamic-component-demo-active': post === selectedPost
-        }"
-        @click="selectedPost = post"
-      >
-        {{ post.title }}
-      </li>
-    </ul>
-    <div class="dynamic-component-demo-post-container">
-      <div v-if="selectedPost" class="dynamic-component-demo-post">
-        <h3>{{ selectedPost.title }}</h3>
-        <div v-html="selectedPost.content"></div>
-      </div>
-      <strong v-else>
-        Click on a blog title to the left to view it.
-      </strong>
-    </div>
-  </div>`,
-    data() {
-    return {
-      posts: [
-        {
-          id: 1,
-          title: 'Cat Ipsum',
-          content:
-            '<p>Dont wait for the storm to pass, dance in the rain kick up litter decide to want nothing to do with my owner today demand to be let outside at once, and expect owner to wait for me as i think about it cat cat moo moo lick ears lick paws so make meme, make cute face but lick the other cats. Kitty poochy chase imaginary bugs, but stand in front of the computer screen. Sweet beast cat dog hate mouse eat string barf pillow no baths hate everything stare at guinea pigs. My left donut is missing, as is my right loved it, hated it, loved it, hated it scoot butt on the rug cat not kitten around</p>'
-        },
-        {
-          id: 2,
-          title: 'Hipster Ipsum',
-          content:
-            '<p>Bushwick blue bottle scenester helvetica ugh, meh four loko. Put a bird on it lumbersexual franzen shabby chic, street art knausgaard trust fund shaman scenester live-edge mixtape taxidermy viral yuccie succulents. Keytar poke bicycle rights, crucifix street art neutra air plant PBR&B hoodie plaid venmo. Tilde swag art party fanny pack vinyl letterpress venmo jean shorts offal mumblecore. Vice blog gentrify mlkshk tattooed occupy snackwave, hoodie craft beer next level migas 8-bit chartreuse. Trust fund food truck drinking vinegar gochujang.</p>'
-        },
-        {
-          id: 3,
-          title: 'Cupcake Ipsum',
-          content:
-            '<p>Icing dessert soufflé lollipop chocolate bar sweet tart cake chupa chups. Soufflé marzipan jelly beans croissant toffee marzipan cupcake icing fruitcake. Muffin cake pudding soufflé wafer jelly bear claw sesame snaps marshmallow. Marzipan soufflé croissant lemon drops gingerbread sugar plum lemon drops apple pie gummies. Sweet roll donut oat cake toffee cake. Liquorice candy macaroon toffee cookie marzipan.</p>'
-        }
-      ],
-      selectedPost: null
-    }
-  }
-})
-
-app.component('tab-archive', {
-  template: `<div class="demo-tab">Archive component</div>`
-})
-
-app.mount('#dynamic-component-demo')
-
-
 const modal_app = Vue.createApp({
-  data() {
-    return {
-      currentModal: 'Login',
-      modals: ['Login', 'Register', 'Recovery-mail', 'Recovery-pass', 'Profile']
-    }
-  }
+    data() {
+      return {
+        isModalVisible: false,
+        //currentModal: 'Login',
+      }
+    },
+    methods: {
+      showModal() {
+        this.isModalVisible = true
+      },
+      closeModal() {
+        this.isModalVisible = false
+      }
+    },
+    computed: {
+      currentModalComponent() {
+        return 'modal-' + this.currentModal.toLowerCase()
+      }
+    },
+    ...delimiters
 })
 
+modal_app.component('modal-login', {
+  template: `<div class="modal__content">
+    <button class="modal__close" @click="close">
+      <img src="assets/images/close.svg">
+    </button>
+
+    <form class="form" action="/" method="post">
+      <h1 class="form__title">Вход</h1>
+
+      <div class="form__group">
+          <input class="form__control" type="text" placeholder="Имя аккаунта">
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__group">
+          <input class="form__control" type="password" placeholder="Пароль">
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__footer">
+          <div class="form__group form-btn">
+            <button class="btn" type="submit">Войти</button>
+          </div>
+
+          <ul class="form__footer-list">
+            <li>
+                <a href="#" class="form__appear">восстановление</a>
+            </li>
+            <li>
+                <a href="#" class="form__appear">регистрация</a>
+            </li>
+          </ul>
+      </div>
+    </form>
+  </div>`
+})
+
+modal_app.component('modal-profile', {
+  template: `<div class="modal__content">
+    <button class="modal__close" @click="closeModal">
+      <img src="assets/images/close.svg">
+    </button>
+
+    <form class="form" action="/" method="post">
+      <h1 class="form__title">Информация об аккаунте</h1>
+      <div class="form__group">
+          <input class="form__control" type="text" value="[nickname]" readonly>
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__group">
+          <input class="form__control" type="email" value="[e-mail]" readonly>
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__group">
+          <input class="form__control" type="password" placeholder="Новый пароль">
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__group">
+          <input class="form__control" type="password" placeholder="Подтвердите пароль">
+          <span class="form__line"></span>
+      </div>
+
+      <div class="form__footer">
+          <div class="form__group">
+            <button class="btn" type="submit">Сохранить</button>
+          </div>
+      </div>
+    </form>
+  </div>`
+})
 
 modal_app.mount('#dynamic-component-modal')

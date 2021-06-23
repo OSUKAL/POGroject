@@ -1,5 +1,10 @@
-<div class="modal">
+<div v-show="isModalVisible" class="modal" @click.self="closeModal">
+
    <div class="modal__content">
+      <button class="modal__close" @click="closeModal">
+         <img src="assets/images/close.svg">
+      </button>
+
       <form class="form" action="/" method="post">
          <h1 class="form__title">Регистрация</h1>
 
@@ -41,6 +46,10 @@
    </div>
 
    <div class="modal__content">
+      <button class="modal__close" @click="closeModal">
+         <img src="assets/images/close.svg">
+      </button>
+
       <form class="form" action="/" method="post">
          <h1 class="form__title">Вход</h1>
 
@@ -72,6 +81,10 @@
    </div>
 
    <div class="modal__content">
+      <button class="modal__close" @click="closeModal">
+         <img src="assets/images/close.svg">
+      </button>
+
       <form class="form" action="/" method="post">
          <h1 class="form__title">Восстановление пароля</h1>
 
@@ -98,6 +111,10 @@
    </div>
 
    <div class="modal__content">
+      <button class="modal__close" @click="closeModal">
+         <img src="assets/images/close.svg">
+      </button>
+
       <form class="form" action="/" method="post">
          <h1 class="form__title">Восстановление пароля</h1>
 
@@ -120,6 +137,10 @@
    </div>
 
    <div class="modal__content">
+      <button class="modal__close" @click="closeModal">
+         <img src="assets/images/close.svg">
+      </button>
+
       <form class="form" action="/" method="post">
          <h1 class="form__title">Информация об аккаунте</h1>
          <div class="form__group">

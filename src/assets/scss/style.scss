@@ -32,6 +32,10 @@ body {
     line-height: 1.5;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .demo {
     font-family: sans-serif;
     border: 1px solid #eee;
@@ -67,9 +71,10 @@ body {
     padding: 10px;
 }
 
-.dynamic-component-demo {
+.dynamic-component-demo-posts-sidebar {
     cursor: pointer;
 }
+
 
 /* Blocks */
 
